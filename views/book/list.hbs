@@ -1,0 +1,26 @@
+<h3><a class="btn btn-secondary" href="/book">Create New</a>Book List</h3>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Publishing Year</th>
+        <th>Language</th>
+    </tr>
+</thead>
+<tbody>
+    {{#each list}}
+    <tr>
+        <td>{{this.bookName}}</td>
+        <td>{{this.author}}</td>
+        <td>{{this.year}}</td>
+        <td>{{this.language}}</td>
+        <td>
+            <a class="btn btn-primary btn-sm" href="/book/{{this.id}}">Edit</a>
+            <a class="btn btn-primary btn-sm" href="/book/delete/{{this.id}}" onclick="return confirm('Are you sure?');">Delete</a>
+            
+        </td>
+    </tr>
+    {{/each}}
+</tbody>
+</table>
